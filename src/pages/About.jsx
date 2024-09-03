@@ -44,6 +44,7 @@ const About = () => {
   const handleChange = (e)=>{
     const { value } = e.target;
     setSearchVal(value);
+    console.log(value, typeof(value))
     const updatedData = data.filter(item => 
       item.todo.toLowerCase().includes(value.toLowerCase())
     );
@@ -104,7 +105,7 @@ const About = () => {
           filteredData?.map(item => (
             <div className="rounded-md border border-black" key={item.id}>
               <div className="p-4 flex flex-col gap-4 items-center text-center">
-                <p>{item.userId}</p>
+                <p>{item.id}</p>
                 <h1 className="text-lg font-semibold">{item.todo}</h1>
                 {item.completed ? <p>Task is Completed</p> : <p>Task isn't completed</p>}
                 <button
